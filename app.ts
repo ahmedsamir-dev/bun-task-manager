@@ -10,7 +10,7 @@ import MongoConnection from '@/connections/mongo.connections'
  * App Class: Bootstrap our server and intialise all required steps to start the server
  */
 export default class App {
-  private elysia: Elysia
+  public elysia: Elysia
   private port: number
 
   constructor(controllers: Array<Elysia>, port: number) {
