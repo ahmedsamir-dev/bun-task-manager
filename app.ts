@@ -3,8 +3,8 @@ import { cors } from '@elysiajs/cors'
 import { helmet } from 'elysia-helmet';
 import { swagger } from '@elysiajs/swagger'
 import { logger } from '@grotto/logysia';
-import type IController from '@/shared/interfaces/controller.interface'
 import MongoConnection from '@/connections/mongo.connections'
+
 
 /**
  * App Class: Bootstrap our server and intialise all required steps to start the server
@@ -40,7 +40,7 @@ export default class App {
           { name: 'Auth', description: 'Authentication endpoints' },
           { name: 'Tasks', description: 'Task management endpoints' }
         ]
-      }
+      },
     }))
   }
 
@@ -50,9 +50,9 @@ export default class App {
    */
   private initialiseControllers(controllers: Array<Elysia>) {
     controllers.forEach((controller) => {
+      console.log(controller)
       this.elysia.use(controller)
     })
-
   }
 
   /**

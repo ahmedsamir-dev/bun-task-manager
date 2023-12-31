@@ -10,13 +10,19 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "noEmit": true,
 
     /* Linting */
     "skipLibCheck": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/modules/*": ["./src/modules/*"],
+      "@/shared/*": ["./src/modules/shared/*"],
+      "@/connections/*": ["./src/connections/*"], 
+      "@/tasks/*": ["./src/modules/tasks/*"]
+    }
   }
 }
