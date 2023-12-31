@@ -9,6 +9,7 @@
     "test": "bun test ./test/**.test.ts"
   },
   "devDependencies": {
+    "@evilmartians/lefthook": "^1.5.5",
     "@types/bun": "latest",
     "@types/supertest": "^6.0.2",
     "bun-types": "^1.0.20"
