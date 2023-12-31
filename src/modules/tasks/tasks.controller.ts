@@ -130,9 +130,7 @@ export default function tasksController(tasksService: ITaskService) {
         }
 
         set.status = 204;
-        return {
-          message: "Task deleted successfully",
-        };
+        return {};
       } catch (error) {
         set.status = 500;
         return {
