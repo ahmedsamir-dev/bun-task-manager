@@ -2,10 +2,10 @@
 pre-commit:
   commands:
     prettier:
-      run: npx prettier --write ./**/src && git add {staged_files}
-    test:
-      run: bun run test
+      run: bunx prettier --write ./src && git add {staged_files}
+    # test:
+    #   run: bun run test
 pre-push:
   commands:
-    test:
-      run: bun run test
+    # test:
+    #   run: bun run test

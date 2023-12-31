@@ -16,10 +16,6 @@ const TaskSchema = new Schema<ITaskDocument>(
 
 TaskSchema.plugin(mongoosePaginate);
 
-const TaskModel = model<ITaskDocument, PaginateModel<ITaskDocument>>(
-  "Tasks",
-  TaskSchema,
-  "tasks",
-);
+const TaskModel = model<ITaskDocument, PaginateModel<ITaskDocument>>("Tasks", TaskSchema, "tasks");
 
 export { ITaskDocument, TaskModel };
