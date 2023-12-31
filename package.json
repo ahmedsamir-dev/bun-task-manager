@@ -3,7 +3,10 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run --watch index.ts"
+    "dev": "bun run --watch index.ts",
+    "build": "bun build index.ts",
+    "start": "bun run index.ts",
+    "test": "bun test"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -13,6 +16,15 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "elysia": "^0.8.6"
+    "@elysiajs/cors": "^0.8.0",
+    "@elysiajs/swagger": "^0.8.0",
+    "@grotto/logysia": "^0.1.1",
+    "dotenv": "^16.3.1",
+    "elysia": "^0.8.6",
+    "elysia-helmet": "^1.0.1",
+    "elysia-rate-limit": "^2.0.1",
+    "module-alias": "^2.2.3",
+    "mongoose": "^8.0.3",
+    "mongoose-paginate-v2": "^1.7.4"
   }
 }
