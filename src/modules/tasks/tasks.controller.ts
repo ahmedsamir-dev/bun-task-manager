@@ -14,8 +14,8 @@ export default function tasksController(tasksService: ITaskService) {
       async ({ set, query }) => {
         try {
           const tasks = await tasksService.getTasks({
-            page: Number(query.page),
-            limit: Number(query.limit),
+            page: Number(query.page) || 1,
+            limit: Number(query.limit) || 10,
           });
 
           set.status = 200;

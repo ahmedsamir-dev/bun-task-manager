@@ -16,8 +16,8 @@ export const getTaskValidation = {
 
 export const getAllTasksValidation = {
   query: t.Object({
-    page: t.String(),
-    limit: t.String(),
+    page: t.Optional(t.String()),
+    limit: t.Optional(t.String()),
   }),
 };
 

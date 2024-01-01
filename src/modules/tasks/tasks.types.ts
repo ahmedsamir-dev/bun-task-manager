@@ -10,8 +10,8 @@ export interface ITask {
 
 export interface ITaskService {
   getTasks(pagination: {
-    page: number;
-    limit: number;
+    page?: number;
+    limit?: number;
   }): Promise<{ tasks: ITask[]; pagination: any }>;
   getTask(id: string): Promise<ITask | null>;
   createTask(task: ITask): Promise<ITask>;
