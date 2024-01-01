@@ -3,6 +3,7 @@ import { cors } from '@elysiajs/cors'
 import { helmet } from 'elysia-helmet';
 import { swagger } from '@elysiajs/swagger'
 import { logger } from '@grotto/logysia';
+import { rateLimit } from 'elysia-rate-limit'
 import MongoConnection from '@/connections/mongo.connections'
 
 
@@ -20,7 +21,6 @@ export default class App {
     this.intialiseMongoConnection()
     this.initialiseMiddlewares()
     this.initialiseControllers(controllers)
-    this.intialiseErrorHandling()
   }
 
   /**
@@ -30,6 +30,7 @@ export default class App {
     this.elysia.use(cors())
     this.elysia.use(helmet())
     this.elysia.use(logger())
+    this.elysia.use(rateLimit({ duration: 60000, max: 20, responseMessage: 'Too many requests, please try again later' }))
     this.elysia.use(swagger({
       documentation: {
         info: {
@@ -50,17 +51,10 @@ export default class App {
    */
   private initialiseControllers(controllers: Array<Elysia>) {
     controllers.forEach((controller) => {
-      console.log(controller)
       this.elysia.use(controller)
     })
   }
 
-  /**
-   * Intialise elysia global error handling middleware, Accepts HttpExecption from controllers and response it to the client side
-   */
-  private intialiseErrorHandling() {
-    // this.elysia.use(errorMiddleware)
-  }
 
   private intialiseMongoConnection() {
     MongoConnection.connect()
