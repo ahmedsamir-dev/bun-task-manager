@@ -67,7 +67,9 @@ export default function tasksController(tasksService: ITaskService) {
           if (!task) {
             set.status = 404;
             return {
-              error: "Task not found",
+              error: {
+                message: "Task not found",
+              },
             };
           }
 
@@ -97,7 +99,9 @@ export default function tasksController(tasksService: ITaskService) {
           if (!task) {
             set.status = 404;
             return {
-              error: "Task not found",
+              error: {
+                message: "Task not found",
+              },
             };
           }
 
@@ -125,7 +129,9 @@ export default function tasksController(tasksService: ITaskService) {
         if (!task) {
           set.status = 404;
           return {
-            error: "Task not found",
+            error: {
+              message: "Task not found",
+            },
           };
         }
 
