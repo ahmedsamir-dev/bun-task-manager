@@ -42,6 +42,9 @@ This project is a backend API for a task manager application developed using Bun
 
 12. **MongoDB Integration:**
     - Connect the API with MongoDB for persistent storage.
+      
+13. **Git Hooks:**
+    - Relied on Lefthook for pre-commit and pre-push hooks for safe commits
 
 ## Postman Documentation
 
